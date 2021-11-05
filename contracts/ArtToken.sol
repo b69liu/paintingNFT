@@ -20,6 +20,7 @@ contract ArtToken is ERC1155 {
     uint256 public constant SHIELD = 4;
 
     uint256 public constant UNIT_PRICE = 1000000;
+    uint256 public constant MAX_MINT = 100;
 
     modifier onlyOwner(){
         require(msg.sender == owner, "You are not owner");
@@ -41,24 +42,22 @@ contract ArtToken is ERC1155 {
 
     
 
-    function mintArtToken(uint256 pictureId) payable public returns (uint256)
+    function mintArtToken(uint256 pictureId) payable public
     {
         address sender = msg.sender;
         uint256 payment = msg.value;
         require(payment >= UNIT_PRICE, "Not enough eth sent");
-        require(payment % UNIT_PRICE!=0, "Not correct eth amount sent");
+        require(payment % UNIT_PRICE==0, "Not correct eth amount sent");
         uint256 mintAmount = payment / UNIT_PRICE;
         uint256 newPaintingCount = paintingsCount[pictureId] + mintAmount;
-        require(newPaintingCount <= 100, "This painting has reached max mint");
+        require(newPaintingCount <= MAX_MINT, "This painting has reached max mint");
         paintingsCount[pictureId] = newPaintingCount;
-        uint256 newTokenId = idCounter.current();
         _mint(
             sender,
-            newTokenId,
+            pictureId,
             mintAmount,
             ""
         );
-        return newTokenId;
     }
 
 
