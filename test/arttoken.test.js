@@ -1,5 +1,6 @@
 const ArtToken = artifacts.require("ArtToken");
 const truffleAssert = require('truffle-assertions');
+const uriArray = require('../uris.json');
 
 
 contract("ArtToken", function(accounts){
@@ -21,14 +22,14 @@ contract("ArtToken", function(accounts){
         const getUriPromises = paintingIds.map((id)=>instance.uri(id));
         const uris = await Promise.all(getUriPromises);
         for(let i=0; i<paintingIds.length; ++i ){
-            assert.equal(uris[i], `https://addresstotoken${paintingIds[i]}.json`);
+            assert.equal(uris[i], uriArray[i]);
         }
     });
 
     it("users should be able to get batch uris", async ()=>{
         const uris = await instance.getUris();
         for(let i=0; i<paintingIds.length; ++i ){
-            assert.equal(uris[i], `https://addresstotoken${paintingIds[i]}.json`);
+            assert.equal(uris[i], uriArray[i]);
         }
     });
 
