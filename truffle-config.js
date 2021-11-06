@@ -66,7 +66,7 @@ module.exports = {
     // skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     // },
     kovantest: {
-    provider: () => new HDWalletProvider(mnemonic, `https://kovan.infura.io/v3/4c402efd468f42c0b0c183c39ad44166`),
+      provider: () => new HDWalletProvider(mnemonic, `https://kovan.infura.io/v3/4c402efd468f42c0b0c183c39ad44166`),
       network_id: 42,       // KovanTest's id
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
       confirmations: 2,    // # of confs to wait between deployments. (default: 0)

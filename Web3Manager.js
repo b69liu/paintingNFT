@@ -23,6 +23,4 @@ class Web3Manager{
 	async mintArtToken(firstPaintingId, payment){
 		return this.myContract.methods.mintArtToken(firstPaintingId).send({from:this.web3.eth.accounts[0], value:payment})
 	}
-
-	
 }
