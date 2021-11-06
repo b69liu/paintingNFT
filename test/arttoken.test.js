@@ -17,10 +17,16 @@ contract("ArtToken", function(accounts){
         assert.equal(owner, accounts[0]);
     });
 
-    it("Owner should be able to get token uris", async ()=>{
+    it("users should be able to get token uris", async ()=>{
         const getUriPromises = paintingIds.map((id)=>instance.uri(id));
         const uris = await Promise.all(getUriPromises);
-        console.log(uris);
+        for(let i=0; i<paintingIds.length; ++i ){
+            assert.equal(uris[i], `https://addresstotoken${paintingIds[i]}.json`);
+        }
+    });
+
+    it("users should be able to get batch uris", async ()=>{
+        const uris = await instance.getUris();
         for(let i=0; i<paintingIds.length; ++i ){
             assert.equal(uris[i], `https://addresstotoken${paintingIds[i]}.json`);
         }

@@ -7,9 +7,7 @@ contract ArtToken is ERC1155 {
     using Counters for Counters.Counter;
     Counters.Counter private idCounter;
     address public owner;
-    string public name;
-    string public symbol;
-    string private _uri;
+
     mapping(uint256 => string) public tokenUriMapping;
     mapping(uint256 => uint256) public paintingsCount;
 
@@ -39,6 +37,14 @@ contract ArtToken is ERC1155 {
 
     function uri(uint256 tokenId) public view override returns (string memory) {
         return tokenUriMapping[tokenId];
+    }
+
+    function getUris() public view returns (string[] memory){
+        string[] memory uris = new string[](totalPaintings);
+        for(uint256 i=0; i<totalPaintings; ++i){
+            uris[i] = uri(i);
+        }
+        return uris;
     }
 
     
