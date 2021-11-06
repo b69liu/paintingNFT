@@ -1,0 +1,39 @@
+Starting migrations...
+======================
+> Network name:    'kovantest'
+> Network id:      42
+> Block gas limit: 12500000 (0xbebc20)
+
+
+2_initial_arttoken.js
+=====================
+
+   Deploying 'ArtToken'
+   --------------------
+   > transaction hash:    0xf2c6b4173fb81c8d990bc64816411ab760200d6fde914df6be22c531209580fe
+   > Blocks: 1            Seconds: 4
+   > contract address:    0xc43A05F9A85c53F33Ae5357f2880e34e19e2E82c
+   > block number:        28207797
+   > block timestamp:     1636228372
+   > account:             0xf239D99943A137AFf8423DED9E4EB461fc9F875e
+   > balance:             0.024923712710196062
+   > gas used:            3480113 (0x351a31)
+   > gas price:           2.5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0087002825 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 28207798)
+   > confirmation number: 2 (block: 28207799)
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:        0.0087002825 ETH
+
+
+Summary
+=======
+> Total deployments:   1
+> Final cost:          0.0087002825 ETH
