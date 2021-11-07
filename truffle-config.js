@@ -67,7 +67,7 @@ module.exports = {
     // },
     rinkeby: {
       provider: () => new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/291dd5f806fb42d6a22e5a9df3d8dcc2`),
-      network_id: 4,       // KovanTest's id
+      network_id: 4,       // rinkeby's id
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
       confirmations: 2,    // # of confs to wait between deployments. (default: 0)
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
@@ -82,9 +82,10 @@ module.exports = {
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     },
     optimistickovan: {
-      provider: () => new HDWalletProvider(mnemonic, `https://optimism-kovan.infura.io/v3/4c402efd468f42c0b0c183c39ad44166`),
-      network_id: 69,       // KovanTest's id
-      gas: 5500000,        // Ropsten has a lower block limit than mainnet
+      provider: () => new HDWalletProvider(mnemonic, `https://kovan.optimism.io`),
+      network_id: 69,       // KovanOptimism's id
+      chainId: 69,
+      gas: 5500000,
       confirmations: 2,    // # of confs to wait between deployments. (default: 0)
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
@@ -115,6 +116,15 @@ module.exports = {
       //  evmVersion: "byzantium"
       // }
     }
+    // solc: {
+    //   version: 'node_modules/@eth-optimism/solc',
+    //   settings: {
+    //     optimizer: {
+    //       enabled: true,
+    //       runs: 1
+    //     }
+    //   }
+    // },
   },
 
   // Truffle DB is currently disabled by default; to enable it, change enabled: false to enabled: true

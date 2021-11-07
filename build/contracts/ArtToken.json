@@ -30442,10 +30442,16 @@
       "links": {},
       "address": "0xc43A05F9A85c53F33Ae5357f2880e34e19e2E82c",
       "transactionHash": "0xf2c6b4173fb81c8d990bc64816411ab760200d6fde914df6be22c531209580fe"
+    },
+    "69": {
+      "events": {},
+      "links": {},
+      "address": "0xc84Cbb1CB2fD1a3100F0bdb0c2fF4d6472Fc2553",
+      "transactionHash": "0x647f50de8da0704215effdbdf379fcb22bc32a8b406ac388e62aee1f7371df76"
     }
   },
   "schemaVersion": "3.4.2",
-  "updatedAt": "2021-11-07T03:27:00.733Z",
+  "updatedAt": "2021-11-07T05:57:18.982Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
