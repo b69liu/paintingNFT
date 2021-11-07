@@ -77,6 +77,10 @@ contract ArtToken is ERC1155 {
         return balances;
     }
 
+    function withdrawEth() payable public onlyOwner {
+        payable(owner).transfer(address(this).balance);
+    } 
+
 
 
 }
