@@ -65,9 +65,25 @@ module.exports = {
     // timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
     // skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     // },
+    rinkeby: {
+      provider: () => new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/291dd5f806fb42d6a22e5a9df3d8dcc2`),
+      network_id: 4,       // KovanTest's id
+      gas: 5500000,        // Ropsten has a lower block limit than mainnet
+      confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+    },
     kovantest: {
       provider: () => new HDWalletProvider(mnemonic, `https://kovan.infura.io/v3/4c402efd468f42c0b0c183c39ad44166`),
       network_id: 42,       // KovanTest's id
+      gas: 5500000,        // Ropsten has a lower block limit than mainnet
+      confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+    },
+    optimistickovan: {
+      provider: () => new HDWalletProvider(mnemonic, `https://optimism-kovan.infura.io/v3/4c402efd468f42c0b0c183c39ad44166`),
+      network_id: 69,       // KovanTest's id
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
       confirmations: 2,    // # of confs to wait between deployments. (default: 0)
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)

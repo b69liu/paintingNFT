@@ -14,7 +14,7 @@ contract ArtToken is ERC1155 {
     uint256 public totalPaintings = 0;
 
 
-    uint256 public constant UNIT_PRICE = 1000000;
+    uint256 public constant UNIT_PRICE = 10000000000000;
     uint256 public constant MAX_MINT = 100;
 
     modifier onlyOwner(){

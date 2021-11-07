@@ -6,7 +6,7 @@ const uriArray = require('../uris.json');
 contract("ArtToken", function(accounts){
     let instance;
     const paintingIds = [0,1,2,3,4,5];
-    const UNIT_PRICE = 1000000;
+    const UNIT_PRICE = 10000000000000;
     const MAX_MINT = 100;
 
     before(async () =>{
